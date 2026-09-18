@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luyao.Song — Projects</title>
+  <meta name="description" content="A selection of projects by Luyao.Song." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">L</span>
+        <span>Luyao.Song</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="contact.html">Contact Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Things I've <span class="accent">made</span></h1>
+        <p>A few projects I'm proud of — a mix of work, side quests, and friendly experiments.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="todo-app" id="todoApp">
+          <div class="todo-head">
+            <h2>My <span class="accent">To-Do</span> List</h2>
+            <p class="todo-sub">Pick a date, write a task, and press Add.</p>
+          </div>
+
+          <form class="todo-form" id="todoForm" novalidate>
+            <div class="todo-field todo-field--date">
+              <label for="todoDate">Date</label>
+              <input type="date" id="todoDate" name="todoDate" required />
+            </div>
+            <div class="todo-field todo-field--text">
+              <label for="todoTask">Task</label>
+              <input type="text" id="todoTask" name="todoTask" placeholder="What needs doing?" maxlength="120" required />
+            </div>
+            <button type="submit" class="btn todo-add">Add</button>
+
+            <div class="todo-extras">
+              <div class="todo-field todo-field--priority">
+                <span class="todo-field-label">Priority</span>
+                <div class="seg" role="radiogroup" aria-label="Priority">
+                  <button type="button" class="seg-btn pri-low" data-pri="low" role="radio" aria-checked="false">Low</button>
+                  <button type="button" class="seg-btn pri-med is-active" data-pri="medium" role="radio" aria-checked="true">Medium</button>
+                  <button type="button" class="seg-btn pri-high" data-pri="high" role="radio" aria-checked="false">High</button>
+                </div>
+              </div>
+              <div class="todo-field todo-field--emoji">
+                <span class="todo-field-label">Tag</span>
+                <div class="emoji-row" role="radiogroup" aria-label="Emoji tag">
+                  <button type="button" class="emo-btn is-active" data-emoji="" role="radio" aria-checked="true" title="No tag">—</button>
+                  <button type="button" class="emo-btn" data-emoji="📌" role="radio" aria-checked="false">📌</button>
+                  <button type="button" class="emo-btn" data-emoji="💼" role="radio" aria-checked="false">💼</button>
+                  <button type="button" class="emo-btn" data-emoji="🎯" role="radio" aria-checked="false">🎯</button>
+                  <button type="button" class="emo-btn" data-emoji="📚" role="radio" aria-checked="false">📚</button>
+                  <button type="button" class="emo-btn" data-emoji="💡" role="radio" aria-checked="false">💡</button>
+                  <button type="button" class="emo-btn" data-emoji="🔔" role="radio" aria-checked="false">🔔</button>
+                  <button type="button" class="emo-btn" data-emoji="⭐" role="radio" aria-checked="false">⭐</button>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <p class="todo-status" id="todoStatus" role="alert" hidden></p>
+
+          <p class="todo-empty" id="todoEmpty" role="status">No tasks yet. Add your first one above. 🌱</p>
+
+          <ul class="todo-list" id="todoList" aria-label="To-do items"></ul>
+
+          <div class="todo-foot" id="todoFoot" hidden>
+            <span class="todo-count" id="todoCount">0 done · 0 left</span>
+            <button type="button" class="todo-clear" id="todoClear">Clear all</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="fun-fact">
+        <div class="label">Fun fact</div>
+        <p>I once learned to juggle from a YouTube tutorial and now keep three tangerines on my desk at all times — just in case.</p>
+      </div>
+      <div class="footer-meta">
+        Made with care by Luyao.Song · © 2026
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
